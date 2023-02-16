@@ -4,60 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
 
     <title>Jay Kim: UI / UX and Frontend Developer.</title>
   </head>
-  <body class="wrapper">
+  <body>
     <header class="header">
       <nav class="nav">
-        <a href="/">
-          <img
-            class="nav__logo"
-            src="assets/images/logo-white.svg"
-            alt="Logo"
-            width="50"
-            height="50"
-            preserveAspectRatio="none"
-          />
+        <a class="nav__logo" href="/">
+          <!-- prettier-ignore -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="fill: #5d71ff" width="52.8" height="52.8" aria-labelledby="logoImage" role="img"><title id="logoImage">Logo Image</title><g><path class="st0" d="M100,100H0V0h100V100z M8.48,91.52h83.04V8.48H8.48V91.52z"/><path class="st0" d="M20.28,78.22V64.89L65.8,34.35H20.28V23.34h58.85v15.31L20.28,78.22z"/><rect x="65.96" y="65.05" class="st0" width="13.17" height="13.17"/></g>
+          </svg>
+          <span class="visuallyhidden">Home Logo</span>
         </a>
-        <!-- 
-        <ul class="social-links">
-          <li class="social-item">
-            <a class="github" href="/"
-              ><img
-                src="assets/images/social-github-white.svg"
-                alt="Github"
-                width="24.61"
-                height="24"
-            /></a>
-          </li>
-          <li class="social-item">
-            <a class="linkedin" href="/"
-              ><img
-                src="assets/images/social-linkedin-white.svg"
-                alt="LinkedIn"
-                width="24.61"
-                height="24"
-            /></a>
-          </li>
-          <li class="social-item">
-            <a class="instagram" href="/"
-              ><img
-                src="assets/images/social-linkedin-white.svg"
-                alt="Instagram"
-                width="24.61"
-                height="24"
-            /></a>
-          </li>
-        </ul> -->
 
         <ul class="nav__links">
           <li class="nav__item">
@@ -85,22 +51,57 @@
           </li>
         </ul>
       </nav>
-
-      <section>
-        <article>
-          <h1>Hi, my<br />name is <span>Jay</span>.</h1>
-          <h3>
-            I'm an UI / UX engineer and<br />
-            Frontend developer from<br />Dallas, Texas.
-          </h3>
-          <button>Learn more ></button>
-        </article>
-        <figure><span class="self"></span></figure>
-      </section>
     </header>
 
-    <main id="main"></main>
+    <main id="main">
+      <section class="section section--top">
+        <div class="main__header">
+          <h1 class="main__title">
+            Hi, my<br />name is <span class="title--bold">Jay.</span>
+          </h1>
+          <h3 class="main__sub-title">
+            I'm an <b>UI / UX & Frontend developer</b><br />based in the Dallas,
+            TX.
+          </h3>
+          <button class="btn--main">Learn more ></button>
+        </div>
+        <div class="main__figure">
+          <img src="./assets/images/image-profile-lg.jpg" alt="Self Image" />
+        </div>
+      </section>
+    </main>
 
     <footer class="footer"></footer>
   </body>
 </html>
+
+<!-- 
+<ul class="social-list">
+  <li class="social-icon">
+    <a class="github" href="/"
+      ><img
+        src="assets/images/social-github-white.svg"
+        alt="Github"
+        width="24.61"
+        height="24"
+    /></a>
+  </li>
+  <li class="social-icon">
+    <a class="linkedin" href="/"
+      ><img
+        src="assets/images/social-linkedin-white.svg"
+        alt="LinkedIn"
+        width="24.61"
+        height="24"
+    /></a>
+  </li>
+  <li class="social-icon">
+    <a class="instagram" href="/"
+      ><img
+        src="assets/images/social-linkedin-white.svg"
+        alt="Instagram"
+        width="24.61"
+        height="24"
+    /></a>
+  </li>
+</ul> -->
