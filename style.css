@@ -32,7 +32,7 @@
 
   /* ETC */
   --container-header: 62rem;
-  --container-main: 57rem;
+  --container-main: 52rem;
   --border-radius: 0.25rem;
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -205,8 +205,9 @@ img {
 }
 
 .main__header {
-  grid-column-start: span 7;
+  grid-column: span 7;
   align-self: center;
+  margin-right: 2rem;
 }
 
 .main__title {
@@ -224,12 +225,34 @@ img {
 
 .main__sub-title {
   font-weight: lighter;
+  margin-bottom: 1.5rem;
 }
 
 .btn--main {
-  background-color: ;
+  color: var(--color-accent);
+  font-size: var(--fs-16);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-accent);
 }
 
 .main__figure {
-  grid-column-end: span 5;
+  grid-column: span 5;
+  position: relative;
+}
+
+.figure__self-image {
+  margin-top: -1.5rem;
+}
+
+.shape-rectangle {
+  position: absolute;
+  top: 1.25rem;
+  left: -2.31rem;
+}
+
+.shape-symbol {
+  position: absolute;
+  bottom: -2.8rem;
+  right: -2.9rem;
+  z-index: -1;
 }
