@@ -1,0 +1,28 @@
+@use "../util" as u;
+
+.hero {
+  padding-top: 4.2rem;
+  padding-bottom: 10rem;
+  color: var(--color-text-light-primary);
+}
+
+.hero > .grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+
+  @include u.breakpoint(large) {
+    //
+  }
+
+  .hero__header {
+    grid-column: span 7;
+    align-self: center;
+    margin-right: 2rem;
+  }
+
+  .hero__figure {
+    grid-column: span 5;
+    position: relative;
+  }
+}
