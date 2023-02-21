@@ -1,75 +1,74 @@
 @use '../util' as util;
 
-// /* ABOUT STYLE */
-// .about {
-//   background-color: var(--color-accent);
-//   padding: 1.7rem;
-// }
+.about {
+  background-color: var(--color-accent);
+  padding: 1.7rem;
+}
 
-// .about__container {
-//   background-color: var(--color-white);
-//   padding-top: 5rem;
-//   padding-bottom: 5rem;
-//   position: relative;
-// }
+.about__container {
+  background-color: var(--color-white);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+}
 
-// .bg-symbol {
-//   position: absolute;
-//   bottom: -2%;
-//   left: 0;
-//   width: 30%;
-//   fill: var(--color-accent);
-// }
+.bg-symbol {
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  width: 30%;
+  fill: var(--color-accent);
+}
 
-// .about__header {
-//   grid-column: span 3;
-// }
+.about__header {
+  grid-column: span 3;
+}
 
-// .about__header > h3 {
-//   font-size: var(--fs-72);
-//   color: var(--color-accent);
-// }
+.about__header > h3 {
+  font-size: var(--fs-72);
+  color: var(--color-accent);
+}
 
-// .about__details {
-//   grid-column: 5 / span 8;
-//   /* grid-column: span 5; */
-// }
+.about__details {
+  grid-column: 5 / span 8;
+  /* grid-column: span 5; */
+}
 
-// .about__title-symbol {
-//   width: 2.2rem;
-//   fill: var(--color-accent);
-//   margin-bottom: -0.5rem;
-//   margin-left: 0.2rem;
-// }
+.about__title-symbol {
+  width: 2.2rem;
+  fill: var(--color-accent);
+  margin-bottom: -0.5rem;
+  margin-left: 0.2rem;
+}
 
-// .content__dev {
-//   margin-bottom: 4.5rem;
-// }
+.content__dev {
+  margin-bottom: 4.5rem;
+}
 
-// .content__dev > h2,
-// .content__des > h2 {
-//   color: var(--color-accent);
-//   font-size: var(--fs-40);
-// }
+.content__dev > h2,
+.content__des > h2 {
+  color: var(--color-accent);
+  font-size: var(--fs-40);
+}
 
-// .dev__description {
-//   margin-bottom: 2rem;
-// }
+.dev__description {
+  margin-bottom: 2rem;
+}
 
-// .dev__list-icons {
-//   display: flex;
-//   margin-right: 1rem;
-// }
+.dev__list-icons {
+  display: flex;
+  margin-right: 1rem;
+}
 
-// .dev__icon {
-//   fill: var(--color-accent);
-//   color: var(--color-accent);
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin-right: 0.7rem;
-// }
+.dev__icon {
+  fill: var(--color-accent);
+  color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0.7rem;
+}
 
-// .dev__icon > svg {
-//   width: 2rem;
-// }
+.dev__icon > svg {
+  width: 2rem;
+}
