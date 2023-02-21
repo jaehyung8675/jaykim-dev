@@ -1,0 +1,124 @@
+@use '../util' as util;
+
+header {
+  width: 100%;
+  height: auto;
+  background-color: var(--color-dark-navy);
+  color: var(--color-text-light-primary);
+
+  nav {
+    max-width: util.rem(1000);
+    margin-inline: auto;
+    padding: util.rem(32) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include util.breakpoint(medium) {
+      //   width: calc(100% - 6.5rem);
+    }
+
+    @include util.breakpoint(large) {
+      //   width: util.em(900);
+    }
+
+    .logo {
+      fill: var(--color-accent);
+      width: util.rem(52.8);
+      height: util.rem(52.8);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+
+      & > li {
+        font-size: util.rem(18);
+        margin-left: 2rem;
+        // font-family: util.$font-secondary;
+      }
+
+      span {
+        font-size: util.rem(14);
+        color: var(--color-accent);
+      }
+
+      .btn--resume {
+        & > a {
+          color: var(--color-accent);
+          background-color: transparent;
+          border: 1px solid var(--color-accent);
+          border-radius: util.rem(4);
+          padding: util.rem(10) util.rem(16);
+        }
+
+        & > a:hover {
+          background-color: var(--color-accent-tint);
+        }
+      }
+    }
+  }
+
+  hgroup {
+    max-width: util.rem(900);
+    margin-inline: auto;
+    padding-top: util.rem(70);
+    padding-bottom: util.rem(120);
+
+    article {
+      grid-column: span 7;
+      padding: 3em 0;
+
+      h1 {
+        font-size: 2.5rem;
+        font-size: clamp(3.5rem, 0.59rem + 8.14vw, 4.5rem);
+        font-weight: lighter;
+        line-height: 1;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-weight: lighter;
+        margin-bottom: 1.5rem;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      button {
+        color: var(--color-accent);
+        font-size: var(--fs-16);
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--color-accent);
+      }
+    }
+
+    figure {
+      grid-column: span 5;
+      position: relative;
+
+      img {
+        position: absolute;
+        z-index: 1;
+      }
+
+      .shape-symbol {
+        width: util.rem(100);
+        fill: var(--color-accent);
+        position: absolute;
+        top: 30px;
+        left: -40px;
+        z-index: 2;
+      }
+
+      .shape-rectangle {
+        width: util.rem(300);
+        fill: var(--color-accent);
+        position: absolute;
+        bottom: 12px;
+        right: 3px;
+      }
+    }
+  }
+}

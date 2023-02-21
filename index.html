@@ -20,10 +20,10 @@
     <title>Jay Kim: UI / UX and Frontend Developer.</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="nav">
-        <a class="nav__logo" href="/">
-          <svg class="logo" viewBox="0 0 100 100">
+    <header>
+      <nav>
+        <a class="logo" href="/">
+          <svg viewBox="0 0 100 100" width="52.8" height="52.8">
             <title>Logo Image</title>
             <g>
               <path
@@ -32,53 +32,41 @@
               <path
                 d="M20.28,78.22V64.89L65.8,34.35H20.28V23.34h58.85v15.31L20.28,78.22z"
               />
-              <rect x="65.96" y="65.05" width="13.17" />
+              <rect x="65.96" y="65.05" width="13.17" height="13.17" />
             </g>
           </svg>
           <span class="visuallyhidden">Home Logo</span>
         </a>
 
         <ul class="nav__links">
-          <li class="nav__item">
-            <a href="#section--1" class="nav__link"
-              ><span class="link--index">01.</span> About</a
-            >
+          <li>
+            <a href="#section--1" class="link"><span>01.</span> About</a>
           </li>
-          <li class="nav__item">
-            <a href="#section--1" class="nav__link"
-              ><span class="link--index">02.</span> Experience</a
-            >
+          <li>
+            <a href="#section--1" class="link"><span>02.</span> Experience</a>
           </li>
-          <li class="nav__item">
-            <a href="#section--1" class="nav__link"
-              ><span class="link--index">03.</span> Work</a
-            >
+          <li>
+            <a href="#section--1" class="link"><span>03.</span> Work</a>
           </li>
-          <li class="nav__item">
-            <a href="#section--1" class="nav__link"
-              ><span class="link--index">04.</span> Contact</a
-            >
+          <li>
+            <a href="#section--1" class="link"><span>04.</span> Contact</a>
           </li>
-          <li class="nav__item btn--resume">
-            <a href="/" class="nav__link">Resume</a>
+          <li class="btn--resume">
+            <a href="/" class="link">Resume</a>
           </li>
         </ul>
       </nav>
-    </header>
 
-    <main id="main">
-      <section class="hero grid wrapper">
-        <div class="hero__header">
-          <h1 class="hero__title">
-            Hi, my<br />name is <span class="title--bold">Jay.</span>
-          </h1>
-          <h3 class="hero__copy">
+      <hgroup class="grid">
+        <article>
+          <h1>Hi, my<br />name is <span>Jay.</span></h1>
+          <p>
             I'm an <b>UI / UX & Frontend developer</b><br />based in the Dallas,
             TX.
-          </h3>
-          <button class="btn--main">Scroll Down ↓</button>
-        </div>
-        <figure class="hero__figure">
+          </p>
+          <button class="btn--scroll-to">Scroll Down &DownArrow;</button>
+        </article>
+        <figure>
           <svg class="shape-symbol" viewBox="0 0 106.2 99.03">
             <g>
               <path d="M0,99.03V74.98l82.14-55.11H0V0h106.2v27.63L0,99.03z" />
@@ -86,7 +74,6 @@
             </g>
           </svg>
           <img
-            class="figure__self-img"
             src="/assets/images/image-profile-mobile.webp"
             alt="Self Image"
           />
@@ -96,11 +83,13 @@
             />
           </svg>
         </figure>
-      </section>
+      </hgroup>
+    </header>
 
+    <main>
       <section class="about">
         <div class="about__container">
-          <div class="bg-symbol">
+          <!-- <div class="bg-symbol">
             <svg viewBox="0 0 150 178.02">
               <g>
                 <g>
@@ -117,11 +106,9 @@
                 </g>
               </g>
             </svg>
-          </div>
+          </div> -->
           <div class="grid wrapper">
             <div class="about__header">
-              <!-- prettier-ignore -->
-              <svg class='about__title-symbol' viewBox='0 0 106.2 99.03'><g><path d='M0,99.03V74.98l82.14-55.11H0V0h106.2v27.63L0,99.03z'/><rect x='82.43' y='75.27' width='23.77' height='23.77'/></g></svg>
               <h3>About</h3>
             </div>
             <div class="about__details">

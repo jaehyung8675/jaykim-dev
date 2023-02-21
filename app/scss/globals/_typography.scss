@@ -20,9 +20,8 @@
 
 h1,
 h2,
-h3,
-h4 {
-  font-family: util.$font-secondary;
+h3 {
+  font-family: util.$font-primary;
   font-weight: bold;
   margin-top: 0;
 }
@@ -35,7 +34,12 @@ h2 {
   font-size: clamp(util.rem(38), util.rem(24) + 2vw, util.rem(62));
 }
 
+h2 {
+  font-size: clamp(util.rem(28), util.rem(14) + 2vw, util.rem(52));
+}
+
 p {
+  font-size: clamp(util.rem(10), util.rem(8) + 1vw, util.rem(16));
   margin-top: 0;
 }
 

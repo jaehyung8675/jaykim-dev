@@ -1,0 +1,13 @@
+@use '../util' as util;
+
+section {
+  max-width: util.em(900);
+  margin-inline: auto;
+}
+
+// @media (min-width: 37.5rem) {
+//   /* Device width is greater than 600px */
+//   .section {
+//     width: calc(100% - 6.5rem);
+//   }
+// }

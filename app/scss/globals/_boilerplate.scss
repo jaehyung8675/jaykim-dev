@@ -1,4 +1,4 @@
-@use "../util" as util;
+@use '../util' as util;
 
 html {
   box-sizing: border-box;
@@ -9,21 +9,18 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: util.$font-primary;
-  background-color: var(--color-dark-navy);
-  color: var(--color-text-dark-primary);
-
   width: 100%;
   height: 100%;
+  font-family: util.$font-primary;
   font-weight: normal;
-  line-height: inherit;
-  font-size: var(--fs-16);
+  font-size: util.rem(16);
   line-height: 1.56;
+  color: var(--color-text-dark-primary);
 }
 
 button {
