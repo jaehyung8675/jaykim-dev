@@ -4,7 +4,8 @@ h1,
 h2,
 h3 {
   font-family: util.$font-primary;
-  font-weight: bold;
+  font-weight: 700;
+  color: var(--color-accent);
   margin-top: 0;
 }
 
@@ -23,25 +24,4 @@ h3 {
 p {
   font-size: clamp(util.rem(10), util.rem(8) + 1vw, util.rem(16));
   margin-top: 0;
-}
-
-ul,
-ol,
-li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-a,
-a:visited,
-a:active {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-  transition: var(--transition);
-}
-
-a:hover {
-  color: var(--color-accent);
 }

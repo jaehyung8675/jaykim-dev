@@ -37,7 +37,9 @@ button {
 input,
 button,
 textarea {
-  border-radius: 0;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
 }
 
 textarea {
@@ -52,6 +54,28 @@ img {
   user-select: none;
 }
 
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: var(--transition);
+  width: 100%;
+}
+
+a:hover,
+button:hover,
+figcaption:hover {
+  transition: var(--transition);
+}
+
 .visuallyhidden {
   position: absolute;
   left: -10000px;
@@ -59,4 +83,27 @@ img {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+small {
+  position: fixed;
+  bottom: 110px;
+  right: 68px;
+  font-size: 0.75rem;
+  transform: rotate(90deg);
+  transform-origin: top right;
+  color: var(--color-text-dark-tint);
+  font-family: util.$font-primary;
+  font-style: italic;
+  letter-spacing: util.rem(1);
+
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    height: 1px;
+    width: 42px;
+    background: var(--color-text-dark-tint);
+  }
 }

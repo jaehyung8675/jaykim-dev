@@ -1,0 +1,60 @@
+@use '../util' as util;
+
+footer {
+  background-color: var(--color-dark-navy);
+  color: var(--color-text-light-primary);
+  padding: util.em(80);
+
+  article {
+    grid-column: span 5;
+
+    p {
+      margin-bottom: util.em(24);
+    }
+
+    ul {
+      display: flex;
+      margin-right: util.em(16);
+
+      li {
+        fill: var(--color-accent);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: util.em(16);
+
+        svg {
+          width: 2rem;
+        }
+      }
+
+      li:hover {
+        fill: var(--color-accent-tint);
+      }
+    }
+  }
+
+  form {
+    grid-column: 7 / span 6;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      color: var(--color-accent);
+      font-size: util.rem(14);
+    }
+
+    input {
+      margin-bottom: util.em(20);
+    }
+
+    input,
+    textarea {
+      color: var(--color-accent);
+      font-size: util.rem(18);
+      font-family: util.$font-secondary;
+      border-bottom: 1px solid var(--color-accent);
+      padding: util.em(6) 0 util.em(14);
+    }
+  }
+}
