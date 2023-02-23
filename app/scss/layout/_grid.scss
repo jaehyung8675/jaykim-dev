@@ -4,6 +4,6 @@
   max-width: util.em(900);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1rem;
+  gap: util.em(20);
   margin-inline: auto;
 }

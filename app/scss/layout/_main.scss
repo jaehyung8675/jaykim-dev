@@ -14,7 +14,7 @@
     grid-column: 5 / span 8;
     padding-left: 2rem;
 
-    div {
+    div:first-child {
       margin-bottom: 4.5rem;
     }
 
@@ -118,6 +118,59 @@
         margin-right: util.em(4);
         vertical-align: 10%;
         display: inline-block;
+      }
+    }
+  }
+}
+
+.projects {
+  background-color: var(--color-light-grey);
+  margin: util.em(28);
+  padding: util.em(120) 0;
+
+  h2 {
+    grid-column: span 12;
+    gap: 0;
+    color: var(--color-accent);
+  }
+
+  figure {
+    grid-column: span 4;
+    background-color: var(--color-white);
+    margin-bottom: util.em(18);
+    // border-radius: util.em(3);
+
+    img {
+      width: 100%;
+      height: 180px;
+      background-color: var(--color-accent);
+    }
+
+    figcaption {
+      padding: util.em(10) util.em(20) util.em(20);
+
+      h3 {
+        font-family: util.$font-primary;
+        font-size: util.rem(22);
+        font-weight: bold;
+        color: var(--color-accent);
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: util.em(4);
+
+        li {
+          font-size: util.rem(10);
+          font-weight: bold;
+          text-transform: uppercase;
+          color: var(--color-white);
+          background-color: var(--color-accent);
+          // border-radius: util.em(6);
+          padding: util.em(6) util.em(15);
+          // margin-right: util.em(8);
+        }
       }
     }
   }
