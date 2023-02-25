@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,13 +17,22 @@
     />
     <link rel="stylesheet" href="/dist/style.css" />
     <script defer src="/app/js/script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('eqZgcICPYyigpacgi');
+      })();
+    </script>
 
     <title>Jay Kim: UI / UX and Frontend Developer.</title>
   </head>
   <body>
-    <header>
+    <header class="header">
       <nav>
-        <a class="logo" href="/">
+        <a class="logo" href="index.html">
           <svg viewBox="0 0 100 100" width="52.8" height="52.8">
             <title>Logo Image</title>
             <g>
@@ -37,27 +47,30 @@
           </svg>
           <span class="visuallyhidden">Home Logo</span>
         </a>
-
-        <ul class="nav__links">
-          <li>
-            <a class="link" href="#section--1"><span>01.</span> About</a>
-          </li>
-          <li>
-            <a class="link" href="#section--1"><span>02.</span> Experience</a>
-          </li>
-          <li>
-            <a class="link" href="#section--1"><span>03.</span> Work</a>
-          </li>
-          <li>
-            <a class="link" href="#section--1"><span>04.</span> Contact</a>
-          </li>
-          <li class="btn--resume">
-            <a class="link" href="/" target="_blank">Resume</a>
-          </li>
-        </ul>
+        <div class="nav__links">
+          <ul>
+            <li>
+              <a class="link" href="#about"><span>01.</span> About</a>
+            </li>
+            <li>
+              <a class="link" href="#experience"><span>02.</span> Experience</a>
+            </li>
+            <li>
+              <a class="link" href="#projects"><span>03.</span> Projects</a>
+            </li>
+            <li>
+              <a class="link" href="#contact"><span>04.</span> Contact</a>
+            </li>
+          </ul>
+          <button class="btn--resume">
+            <a href="/assets/images/Resume-Jay-Kim.pdf" target="_blank"
+              >Resume</a
+            >
+          </button>
+        </div>
       </nav>
 
-      <hgroup class="grid">
+      <hgroup>
         <article>
           <h1>Hi, my<br />name is <span>Jay.</span></h1>
           <p>
@@ -86,7 +99,7 @@
       </hgroup>
     </header>
 
-    <section class="about">
+    <section id="about" class="about">
       <div class="grid">
         <h2>About me</h2>
         <article>
@@ -392,15 +405,22 @@
       </div>
     </section>
 
-    <section class="experience">
+    <section id="experience" class="experience">
       <div class="grid">
         <h2>Where I’ve worked</h2>
         <menu>
-          <li><button class="active">Binnerri Church</button></li>
-          <li><button>OTA World LLC</button></li>
-          <li><button>Pantech Wireless, Inc.</button></li>
+          <button class="btn--experience tab-1 active" data-tab="1">
+            Binnerri Church
+          </button>
+          <button class="btn--experience tab-2" data-tab="2">
+            OTA World LLC
+          </button>
+          <button class="btn--experience tab-3" data-tab="3">
+            Pantech Wireless, Inc.
+          </button>
+          <hr />
         </menu>
-        <article>
+        <article class="article--experience ex-1 active">
           <p>UI / UX Designer <span>2017 - Present</span></p>
           <ul>
             <li>
@@ -419,15 +439,60 @@
             </li>
           </ul>
         </article>
+        <article class="article--experience ex-2">
+          <p>Senior Web Designer / Developer <span>2020 – 2023</span></p>
+          <ul>
+            <li>
+              Led a design team to create and enhance all visual design, and
+              optimize company websites.
+            </li>
+            <li>
+              Designed web pages and developed them from the ground up using
+              JavaScript, HTML, and CSS.
+            </li>
+            <li>
+              Created global CSS libraries to enforce a consistent style across
+              Shopify e-commerce sites.
+            </li>
+            <li>
+              Rebuilt the company’s web pages initially written in HTML / CSS
+              using JavaScript.
+            </li>
+            <li>
+              Created social media graphics and run advertising campaigns on
+              Meta platforms.
+            </li>
+          </ul>
+        </article>
+        <article class="article--experience ex-3">
+          <p>SKY Designer Community / Internship <span>2010 – 2011</span></p>
+          <ul>
+            <li>
+              Executed all mobile design processes from concept ideas to build
+              mock-ups.
+            </li>
+            <li>
+              Created storyboards, user flows, and prototypes to explore
+              interactions and design ideas.
+            </li>
+            <li>
+              Collaborated with team members to implement new concept designs.
+            </li>
+            <li>
+              Handled all composition, color, illustration, typography, and
+              branding for 2 main projects.
+            </li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
       <div class="grid">
         <h2>Projects I’ve built</h2>
         <figure>
-          <img src="" alt="" />
           <a href="" target="_blank">
+            <img src="" alt="" />
             <figcaption>
               <h3>Personal Website</h3>
               <ul>
@@ -438,10 +503,9 @@
             </figcaption>
           </a>
         </figure>
-
         <figure>
-          <img src="" alt="" />
           <a href="" target="_blank">
+            <img src="" alt="" />
             <figcaption>
               <h3>Discover</h3>
               <ul>
@@ -452,10 +516,9 @@
             </figcaption>
           </a>
         </figure>
-
         <figure>
-          <img src="" alt="" />
           <a href="" target="_blank">
+            <img src="" alt="" />
             <figcaption>
               <h3>Bankapp</h3>
               <ul>
@@ -466,10 +529,9 @@
             </figcaption>
           </a>
         </figure>
-
         <figure>
-          <img src="" alt="" />
           <a href="" target="_blank">
+            <img src="" alt="" />
             <figcaption>
               <h3>Verbal</h3>
               <ul>
@@ -479,10 +541,9 @@
             </figcaption>
           </a>
         </figure>
-
         <figure>
-          <img src="" alt="" />
           <a href="" target="_blank">
+            <img src="" alt="" />
             <figcaption>
               <h3>Coin Card</h3>
               <ul>
@@ -495,7 +556,7 @@
       </div>
     </section>
 
-    <footer>
+    <footer id="contact">
       <div class="grid">
         <article>
           <h2>Get in touch!</h2>
@@ -506,7 +567,7 @@
           </p>
           <ul>
             <li>
-              <a href="" target="_blank">
+              <a href="https://www.linkedin.com/in/jay8675/" target="_blank">
                 <svg viewBox="0 0 128 128">
                   <title>LinkedIn</title>
                   <path
@@ -520,7 +581,7 @@
               </a>
             </li>
             <li>
-              <a href="" target="_blank">
+              <a href="https://github.com/jaehyung8675" target="_blank">
                 <svg width="35" viewBox="0 0 128 128">
                   <title>Github</title>
                   <g>
@@ -538,19 +599,25 @@
             </li>
           </ul>
         </article>
-        <form action="">
+        <form method="POST">
           <label for="">Name</label>
-          <input id="name" placeholder="Enter your name" type="text" />
+          <input id="name" placeholder="Enter your name" type="text" required />
           <label for="">Email Address</label>
-          <input id="email" placeholder="Enter your email" type="text" />
+          <input
+            id="email"
+            placeholder="Enter your email"
+            type="email"
+            required
+          />
           <label for="">Your Message</label>
           <textarea
             id="message"
             placeholder="Hi, I think we need a design system for our product at Company X."
             type="text"
-            row="7"
+            row="4"
             minlength="30"
           ></textarea>
+          <button type="submit" onclick="sendEmail">Say Hello</button>
         </form>
       </div>
     </footer>
