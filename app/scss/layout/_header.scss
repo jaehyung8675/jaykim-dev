@@ -75,16 +75,11 @@ header {
   hgroup {
     display: grid;
     grid-template-columns: 60% 1fr;
-    // grid-column-gap: util.rem(120);
     max-width: util.em(1000);
     margin-inline: auto;
     padding-top: util.rem(80);
-    // padding-top: util.rem(80);
-    // padding-bottom: util.rem(140);
 
     article {
-      // max-width: util.rem(600);
-
       h1 {
         font-weight: lighter;
         line-height: 1;
@@ -108,13 +103,13 @@ header {
 
       button {
         color: var(--color-accent);
-        font-size: util.rem(18);
-        padding: 0 util.em(6) util.em(8);
-        border-bottom: 1px solid var(--color-accent);
+        font-size: util.rem(20);
+        padding: 0 util.em(8) util.em(8);
+        border-bottom: 2px solid var(--color-accent);
 
         &:hover {
           color: var(--color-accent-tint);
-          border-bottom: 1px solid var(--color-accent-tint);
+          border-bottom: 2px solid var(--color-accent-tint);
         }
       }
     }
