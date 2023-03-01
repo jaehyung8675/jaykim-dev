@@ -1,4 +1,4 @@
-@use '../util' as util;
+@use '../util' as *;
 
 header {
   height: 100vh;
@@ -11,8 +11,16 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-inline: auto;
-    padding: util.rem(32) util.rem(120);
+    padding: rem(32) rem(32);
     z-index: 9999;
+
+    @include breakpoint(medium) {
+      padding: rem(32) rem(60);
+    }
+
+    @include breakpoint(large) {
+      padding: rem(32) rem(120);
+    }
 
     &.sticky {
       position: fixed;
@@ -20,53 +28,102 @@ header {
       color: var(--color-accent);
     }
 
-    @include util.breakpoint(medium) {
-      //   width: calc(100% - 6.5rem);
-    }
-
-    @include util.breakpoint(large) {
-      //   width: util.em(900);
-    }
-
     .logo {
       fill: var(--color-accent);
-      width: util.rem(52.8);
-      height: util.rem(52.8);
+      width: rem(52.8);
+      height: rem(52.8);
     }
 
-    .nav__links {
+    .nav__bar {
+      visibility: hidden;
       display: flex;
 
-      ul {
+      &.active {
+        visibility: visible;
+      }
+
+      @include breakpoint(large) {
+      }
+
+      .nav__links {
         display: flex;
         align-items: center;
 
         li {
-          font-size: util.rem(16);
-          margin-right: util.rem(32);
-          font-family: util.$font-secondary;
+          font-size: rem(16);
+          margin-right: rem(32);
+          font-family: $font-secondary;
 
           a:hover {
             color: var(--color-accent-tint);
           }
 
           span {
-            font-size: util.rem(14);
+            font-size: rem(14);
             color: var(--color-accent);
           }
         }
       }
 
       .btn--resume > a {
-        font-size: util.rem(16);
+        font-size: rem(16);
         color: var(--color-accent);
         background-color: transparent;
         border: 1px solid var(--color-accent);
         border-radius: 4px;
-        padding: util.rem(12) util.rem(18);
+        padding: rem(12) rem(18);
 
         &:hover {
           background-color: var(--color-accent-tint-double);
+        }
+      }
+    }
+
+    .navbar-icon {
+      // display: flex;
+
+      @include breakpoint(large) {
+        display: none;
+      }
+
+      span {
+        display: block;
+        position: relative;
+        width: rem(50);
+        height: rem(3);
+        background-color: var(--color-accent);
+
+        &:before,
+        &:after {
+          content: '';
+          width: rem(50);
+          height: rem(3);
+          position: absolute;
+          background-color: var(--color-accent);
+        }
+
+        &:before {
+          top: 12px;
+        }
+
+        &:after {
+          bottom: 12px;
+        }
+
+        &.active {
+          span {
+            background-color: transparent;
+
+            &:before {
+              transform: rotate(45deg);
+              bottom: 0;
+            }
+
+            &:after {
+              transform: rotate(45deg);
+              bottom: 0;
+            }
+          }
         }
       }
     }
@@ -74,16 +131,25 @@ header {
 
   hgroup {
     display: grid;
-    grid-template-columns: 60% 1fr;
-    max-width: util.em(1000);
+    max-width: rem(1000);
+    padding: rem(32) rem(60);
     margin-inline: auto;
-    padding-top: util.rem(80);
+
+    @include breakpoint(medium) {
+    }
+
+    @include breakpoint(large) {
+      grid-template-columns: 60% 1fr;
+      // grid-auto-flow: column;
+
+      padding: rem(80) 0;
+    }
 
     article {
       h1 {
         font-weight: lighter;
         line-height: 1;
-        margin-bottom: util.rem(38);
+        margin-bottom: rem(38);
 
         span {
           font-weight: bold;
@@ -91,9 +157,9 @@ header {
       }
 
       p {
-        font-size: util.rem(28);
+        font-size: rem(28);
         line-height: 1.56;
-        margin-bottom: util.rem(50);
+        margin-bottom: rem(50);
 
         span {
           color: var(--color-accent);
@@ -103,8 +169,8 @@ header {
 
       button {
         color: var(--color-accent);
-        font-size: util.rem(20);
-        padding: 0 util.em(8) util.em(8);
+        font-size: rem(20);
+        padding: 0 rem(8) rem(8);
         border-bottom: 2px solid var(--color-accent);
 
         &:hover {
@@ -120,11 +186,11 @@ header {
       img {
         position: absolute;
         z-index: 2;
-        width: util.rem(370);
+        width: rem(370);
       }
 
       .shape-symbol {
-        width: util.rem(100);
+        width: rem(100);
         fill: var(--color-accent);
         position: absolute;
         top: 30px;
@@ -133,7 +199,7 @@ header {
       }
 
       .shape-rectangle {
-        width: util.rem(350);
+        width: rem(350);
         fill: var(--color-accent);
         position: absolute;
         bottom: -50px;

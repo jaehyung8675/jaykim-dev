@@ -17,15 +17,6 @@
     />
     <link rel="stylesheet" href="/dist/style.css" />
     <script defer src="/app/js/script.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init('eqZgcICPYyigpacgi');
-      })();
-    </script>
 
     <title>Jay Kim: UI / UX and Frontend Developer.</title>
   </head>
@@ -45,21 +36,24 @@
               <rect x="65.96" y="65.05" width="13.17" height="13.17" />
             </g>
           </svg>
-          <span class="visuallyhidden">Home Logo</span>
         </a>
-        <div class="nav__links">
-          <ul>
+        <div class="nav__bar">
+          <ul class="nav__links">
             <li>
-              <a class="link" href="#about"><span>01.</span> About</a>
+              <a class="nav__link" href="#about"><span>01.</span> About</a>
             </li>
             <li>
-              <a class="link" href="#experience"><span>02.</span> Experience</a>
+              <a class="nav__link" href="#experience"
+                ><span>02.</span> Experience</a
+              >
             </li>
             <li>
-              <a class="link" href="#projects"><span>03.</span> Projects</a>
+              <a class="nav__link" href="#projects"
+                ><span>03.</span> Projects</a
+              >
             </li>
             <li>
-              <a class="link" href="#contact"><span>04.</span> Contact</a>
+              <a class="nav__link" href="#contact"><span>04.</span> Contact</a>
             </li>
           </ul>
           <button class="btn--resume">
@@ -67,6 +61,9 @@
               >Resume</a
             >
           </button>
+        </div>
+        <div class="navbar-icon">
+          <span></span>
         </div>
       </nav>
 
@@ -491,9 +488,13 @@
       <div class="grid">
         <h2>Projects I’ve built</h2>
         <figure>
-          <a href="" target="_blank">
-            <img src="" alt="" />
-            <figcaption>
+          <a href="/" target="_blank">
+            <img
+              class="project__img"
+              src="/assets/images/project-personal-web.webp"
+              alt="Personal Website Project"
+            />
+            <figcaption class="project__caption">
               <h3>Personal Website</h3>
               <ul>
                 <li>JavaScript</li>
@@ -504,10 +505,14 @@
           </a>
         </figure>
         <figure>
-          <a href="" target="_blank">
-            <img src="" alt="" />
-            <figcaption>
-              <h3>Discover</h3>
+          <a href="https://project-discovered.netlify.app" target="_blank">
+            <img
+              class="project__img"
+              src="/assets/images/project-discovered.webp"
+              alt="Discovered Project"
+            />
+            <figcaption class="project__caption">
+              <h3>Discovered</h3>
               <ul>
                 <li>React</li>
                 <li>Node.js</li>
@@ -517,9 +522,13 @@
           </a>
         </figure>
         <figure>
-          <a href="" target="_blank">
-            <img src="" alt="" />
-            <figcaption>
+          <a href="https://project-bankapp.netlify.app" target="_blank">
+            <img
+              class="project__img"
+              src="/assets/images/project-bankapp.webp"
+              alt="Bankapp Project"
+            />
+            <figcaption class="project__caption">
               <h3>Bankapp</h3>
               <ul>
                 <li>JavaScript</li>
@@ -530,9 +539,13 @@
           </a>
         </figure>
         <figure>
-          <a href="" target="_blank">
-            <img src="" alt="" />
-            <figcaption>
+          <a href="https://adobe.ly/3WNklsE" target="_blank">
+            <img
+              class="project__img"
+              src="/assets/images/project-verbal.webp"
+              alt="Verbal Project"
+            />
+            <figcaption class="project__caption">
               <h3>Verbal</h3>
               <ul>
                 <li>UX Design</li>
@@ -542,9 +555,13 @@
           </a>
         </figure>
         <figure>
-          <a href="" target="_blank">
-            <img src="" alt="" />
-            <figcaption>
+          <a href="https://adobe.ly/3Co1i11" target="_blank">
+            <img
+              class="project__img"
+              src="/assets/images/project-coin-card.webp"
+              alt="Coin Card Project"
+            />
+            <figcaption class="project__caption">
               <h3>Coin Card</h3>
               <ul>
                 <li>UX Design</li>
@@ -599,28 +616,40 @@
             </li>
           </ul>
         </article>
-        <form method="POST">
-          <label for="">Name</label>
-          <input id="name" placeholder="Enter your name" type="text" required />
-          <label for="">Email Address</label>
+        <form
+          class="form"
+          action="https://formspree.io/f/xoqzwaoz"
+          method="POST"
+        >
+          <label>Name</label>
           <input
-            id="email"
-            placeholder="Enter your email"
-            type="email"
+            class="form__input--name"
+            type="text"
+            name="Name"
+            placeholder="Enter your name"
             required
           />
-          <label for="">Your Message</label>
+          <label>Email Address</label>
+          <input
+            class="form__input--email"
+            type="email"
+            name="Email"
+            placeholder="Enter your email"
+            required
+          />
+          <label>Your Message</label>
           <textarea
-            id="message"
-            placeholder="Hi, I think we need a design system for our product at Company X."
+            class="form__input--textarea"
             type="text"
+            name="Message"
+            placeholder="Hi, I think we need a design system for our product at Company X."
             row="4"
             minlength="30"
           ></textarea>
-          <button type="submit" onclick="sendEmail">Say Hello</button>
+          <button class="form__input--btn" type="submit">Say Hello</button>
         </form>
       </div>
     </footer>
-    <small class="copyright">Designed & Developed by Jay Kim</small>
+    <small class="copyright">© Designed & Developed by Jay Kim</small>
   </body>
 </html>

@@ -1,0 +1,43 @@
+@use '../util' as *;
+
+.about {
+  background-color: var(--color-light-grey);
+  margin: rem(24);
+  padding: rem(120) 0;
+
+  h2 {
+    grid-column: span 4;
+  }
+
+  article {
+    grid-column: 5 / span 8;
+    padding-left: rem(32);
+
+    div:first-child {
+      margin-bottom: rem(72);
+    }
+
+    p {
+      margin-top: rem(18);
+      margin-bottom: rem(32);
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(12);
+
+      li {
+        fill: var(--color-accent);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // margin-right: rem(12);
+
+        svg {
+          width: rem(36);
+        }
+      }
+    }
+  }
+}

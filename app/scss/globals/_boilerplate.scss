@@ -1,4 +1,4 @@
-@use '../util' as util;
+@use '../util' as *;
 
 html {
   box-sizing: border-box;
@@ -16,7 +16,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  font-family: util.$font-secondary;
+  font-family: $font-secondary;
   font-size: inherit;
   font-weight: normal;
   line-height: 1.8;
@@ -85,24 +85,32 @@ figcaption:hover {
 }
 
 small {
-  position: fixed;
-  bottom: 110px;
-  right: 68px;
-  font-size: 0.75rem;
-  transform: rotate(90deg);
-  transform-origin: top right;
-  color: var(--color-text-dark-tint);
-  font-family: util.$font-primary;
+  display: block;
+  background-color: var(--color-dark-navy);
+  font-family: $font-primary;
   font-style: italic;
-  letter-spacing: util.rem(1);
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--color-text-dark-tint);
+  letter-spacing: rem(1);
+  padding-bottom: rem(32);
 
-  &:after {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 15px;
-    height: 1px;
-    width: 42px;
-    background: var(--color-text-dark-tint);
+  @include breakpoint(large) {
+    position: fixed;
+    bottom: 110px;
+    right: 68px;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    background-color: transparent;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+      height: 1px;
+      width: 42px;
+      background: var(--color-text-dark-tint);
+    }
   }
 }

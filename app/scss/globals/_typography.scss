@@ -1,28 +1,24 @@
-@use '../util' as util;
+@use '../util' as *;
 
 h1,
 h2,
 h3 {
-  font-family: util.$font-primary;
+  font-family: $font-primary;
   font-weight: 700;
   margin-top: 0;
   line-height: initial;
 }
 
 h1 {
-  font-size: clamp(util.rem(56), 0.59rem + 8.14vw, util.rem(82));
+  font-size: rem(82);
 }
 
 h2 {
-  font-size: clamp(util.rem(38), util.rem(24) + 2vw, util.rem(62));
+  font-size: rem(62);
   color: var(--color-accent);
 }
 
 h3 {
-  font-size: clamp(util.rem(28), util.rem(14) + 2vw, util.rem(36));
+  font-size: rem(36);
   color: var(--color-accent);
-}
-
-p {
-  font-size: clamp(util.rem(10), util.rem(8) + 1vw, util.rem(16));
 }

@@ -1,1 +1,1 @@
-.hero{padding-top:4.2rem;padding-bottom:10rem;color:var(--color-text-light-primary)}.hero>.grid{display:grid;grid-template-columns:repeat(12, minmax(0, 1fr));gap:1rem}.hero>.grid .hero__header{grid-column:span 7;align-self:center;margin-right:2rem}.hero>.grid .hero__figure{grid-column:span 5;position:relative}/*# sourceMappingURL=grid.css.map */
+.grid{max-width:56.25rem;display:grid;grid-template-columns:repeat(12, minmax(0, 1fr));gap:1.25rem;margin-inline:auto}/*# sourceMappingURL=grid.css.map */
