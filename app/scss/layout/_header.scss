@@ -12,7 +12,6 @@ header {
     align-items: center;
     margin-inline: auto;
     padding: rem(32) rem(32);
-    z-index: 9999;
 
     @include breakpoint(medium) {
       padding: rem(32) rem(60);
@@ -25,34 +24,75 @@ header {
     &.sticky {
       position: fixed;
       backdrop-filter: blur(20px);
-      color: var(--color-accent);
+      padding: rem(20) rem(24);
+      z-index: 9;
+
+      @include breakpoint(medium) {
+        padding: rem(32) rem(60);
+      }
+
+      @include breakpoint(large) {
+        padding: rem(16) rem(120);
+        background-color: var(--color-dark-navy);
+        box-shadow: 0px 0px 30px var(--color-dark-navy);
+      }
     }
 
     .logo {
       fill: var(--color-accent);
       width: rem(52.8);
       height: rem(52.8);
+      z-index: 10;
     }
 
-    .nav__bar {
+    .main-menu {
       visibility: hidden;
-      display: flex;
-
-      &.active {
-        visibility: visible;
-      }
+      display: none;
+      transform: translateX(100vw);
+      transition: var(--transition);
 
       @include breakpoint(large) {
+        display: flex;
+        align-items: center;
+        visibility: visible;
+        transform: translateX(0vw);
+      }
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(76vw, 400px);
+        height: 100vh;
+        background-color: var(--color-dark-navy);
+        box-shadow: 0px 0px 30px var(--color-dark-navy);
+        visibility: visible;
+        transform: translateX(0vw);
+        transition: var(--transition);
+        z-index: 9;
       }
 
       .nav__links {
         display: flex;
+        flex-direction: column;
         align-items: center;
 
+        @include breakpoint(large) {
+          flex-direction: row;
+        }
+
         li {
-          font-size: rem(16);
-          margin-right: rem(32);
+          font-size: rem(24);
           font-family: $font-secondary;
+          padding: rem(16);
+
+          @include breakpoint(large) {
+            font-size: rem(16);
+          }
 
           a:hover {
             color: var(--color-accent-tint);
@@ -66,12 +106,20 @@ header {
       }
 
       .btn--resume > a {
-        font-size: rem(16);
+        font-size: rem(20);
         color: var(--color-accent);
         background-color: transparent;
         border: 1px solid var(--color-accent);
         border-radius: 4px;
-        padding: rem(12) rem(18);
+        width: max-content;
+        padding: rem(16) rem(44);
+        margin: rem(42) 0 0;
+
+        @include breakpoint(large) {
+          font-size: rem(16);
+          padding: rem(12) rem(18);
+          margin: 0 0 0 rem(16);
+        }
 
         &:hover {
           background-color: var(--color-accent-tint-double);
@@ -80,49 +128,56 @@ header {
     }
 
     .navbar-icon {
-      // display: flex;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      z-index: 10;
 
       @include breakpoint(large) {
         display: none;
       }
 
       span {
-        display: block;
+        display: flex;
         position: relative;
-        width: rem(50);
-        height: rem(3);
+        width: 50px;
+        height: 3px;
         background-color: var(--color-accent);
-
-        &:before,
-        &:after {
-          content: '';
-          width: rem(50);
-          height: rem(3);
-          position: absolute;
-          background-color: var(--color-accent);
-        }
+        transition: var(--transition);
 
         &:before {
-          top: 12px;
+          content: '';
+          width: 50px;
+          height: 3px;
+          position: absolute;
+          top: 15px;
+          background-color: var(--color-accent);
+          transition: var(--transition);
         }
 
         &:after {
-          bottom: 12px;
+          content: '';
+          width: 50px;
+          height: 3px;
+          position: absolute;
+          bottom: 15px;
+          background-color: var(--color-accent);
+          transition: var(--transition);
         }
+      }
 
-        &.active {
-          span {
-            background-color: transparent;
+      &.active {
+        span {
+          background-color: transparent;
 
-            &:before {
-              transform: rotate(45deg);
-              bottom: 0;
-            }
+          &:before {
+            transform: rotate(45deg);
+            top: 0;
+          }
 
-            &:after {
-              transform: rotate(45deg);
-              bottom: 0;
-            }
+          &:after {
+            transform: rotate(-45deg);
+            bottom: 0;
           }
         }
       }

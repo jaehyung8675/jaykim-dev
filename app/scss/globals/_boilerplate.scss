@@ -30,6 +30,8 @@ button {
   appearance: none;
   background-color: transparent;
   color: inherit;
+  width: max-content;
+  height: max-content;
 }
 
 input,
@@ -81,6 +83,10 @@ figcaption:hover {
   top: auto;
   width: 1px;
   height: 1px;
+  overflow: hidden;
+}
+
+.overflowhidden {
   overflow: hidden;
 }
 

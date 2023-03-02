@@ -1,13 +1,16 @@
 'use strict';
 
 //// Elements
+const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const nav = document.querySelector('nav');
 const logo = document.querySelector('.logo');
+const mainMenu = document.querySelector('.main-menu');
+const navBarIcon = document.querySelector('.navbar-icon');
 const navLinks = document.querySelector('.nav__links');
 const about = document.getElementById('about');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
-const experienceMenu = document.querySelector('menu');
+const experienceMenu = document.querySelector('.experience__menu');
 const experienceTabs = document.querySelectorAll('.btn--experience');
 const experienceContents = document.querySelectorAll('.article--experience');
 const projects = document.querySelector('.projects');
@@ -16,26 +19,13 @@ const inputEmail = document.querySelector('.form__input--email');
 const inputTextarea = document.querySelector('.form__input--textarea');
 const inputBtn = document.querySelector('.form__input--btn');
 
-//// Functions
-// Reveal sections
-// const allNavLinks = document.querySelectorAll('.nav__link');
-
-// const revealNav = function (entries, observer) {
-//   const [entry] = entries;
-//   if (!entry.isIntersecting) return;
-
-//   entry.target.classList.remove('link--hidden');
-// };
-
-// const navObserver = new IntersectionObserver(revealNav, {
-//   root: null,
-//   threshold: 0,
-// });
-
-// allNavLinks.forEach((link) => {
-//   navObserver.observe(link);
-//   link.classList.add('link--hidden');
-// });
+//// Event Handler
+// Nav Bar
+navBarIcon.addEventListener('click', function () {
+  navBarIcon.classList.toggle('active');
+  mainMenu.classList.toggle('active');
+  body.classList.toggle('overflowhidden');
+});
 
 // Sticky navigation - Interaction Observer API
 const navHeight = nav.getBoundingClientRect().height;
@@ -55,19 +45,25 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 headerObserver.observe(header);
 
-//// Event Handler
 // Section navigation
+const closeMenu = function () {
+  navBarIcon.classList.remove('active');
+  mainMenu.classList.remove('active');
+};
+
 navLinks.addEventListener('click', function (e) {
   e.preventDefault();
   if (e.target.classList.contains('nav__link')) {
     const id = e.target.getAttribute('href');
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
+  closeMenu();
 });
 
 logo.addEventListener('click', function (e) {
   e.preventDefault();
   header.scrollIntoView({ behavior: 'smooth' });
+  closeMenu();
 });
 
 // Button scrolling
@@ -75,6 +71,7 @@ btnScrollTo.addEventListener('click', function () {
   about.scrollIntoView({
     behavior: 'smooth',
   });
+  closeMenu();
 });
 
 // Experience tap & content activation
@@ -93,17 +90,12 @@ experienceMenu.addEventListener('click', function (e) {
 
 // Project fase animation
 const handleHover = function (e) {
-  if (
-    e.target.classList.contains('project__img') ||
-    e.target.classList.contains('project__caption')
-  ) {
-    const link = e.target.closest('figure');
-    const siblings = link.closest('.projects').querySelectorAll('figure');
+  const link = e.target.closest('.project');
+  const siblings = link.closest('.projects').querySelectorAll('figure');
 
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = this;
-    });
-  }
+  siblings.forEach((el) => {
+    if (el !== link) el.style.opacity = this;
+  });
 };
 
 projects.addEventListener('mouseover', handleHover.bind(0.3));
