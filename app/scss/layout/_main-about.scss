@@ -2,24 +2,56 @@
 
 .about {
   background-color: var(--color-light-grey);
-  margin: rem(24);
-  padding: rem(120) 0;
+  padding: rem(60) rem(40);
+  margin: rem(14);
+
+  @include breakpoint(medium) {
+    padding: rem(60);
+    margin: rem(24);
+  }
+
+  @include breakpoint(large) {
+    padding: rem(120) 0;
+    margin: rem(24);
+  }
 
   h2 {
-    grid-column: span 4;
+    grid-column: span 12;
+
+    @include breakpoint(medium) {
+      grid-column: span 5;
+    }
   }
 
   article {
-    grid-column: 5 / span 8;
-    padding-left: rem(32);
+    grid-column: span 12;
+
+    @include breakpoint(medium) {
+      grid-column: span 7;
+    }
 
     div:first-child {
-      margin-bottom: rem(72);
+      margin-bottom: rem(50);
+
+      @include breakpoint(medium) {
+        margin-bottom: rem(72);
+      }
+    }
+
+    h3 {
+      margin-bottom: rem(10);
+
+      @include breakpoint(medium) {
+        margin-bottom: rem(18);
+      }
     }
 
     p {
-      margin-top: rem(18);
-      margin-bottom: rem(32);
+      margin-bottom: rem(20);
+
+      @include breakpoint(medium) {
+        margin-bottom: rem(32);
+      }
     }
 
     ul {

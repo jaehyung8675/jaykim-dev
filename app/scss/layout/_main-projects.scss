@@ -2,8 +2,18 @@
 
 .projects {
   background-color: var(--color-light-grey);
-  margin: rem(24);
-  padding: rem(120) 0;
+  padding: rem(60) rem(40);
+  margin: rem(14);
+
+  @include breakpoint(medium) {
+    padding: rem(60);
+    margin: rem(24);
+  }
+
+  @include breakpoint(large) {
+    padding: rem(120) 0;
+    margin: rem(24);
+  }
 
   h2 {
     grid-column: span 12;
@@ -12,10 +22,14 @@
   }
 
   figure {
-    grid-column: span 4;
+    grid-column: span 12;
     background-color: var(--color-white);
     margin-bottom: rem(16);
     transition: var(--transition);
+
+    @include breakpoint(medium) {
+      grid-column: span 4;
+    }
 
     img {
       width: 100%;

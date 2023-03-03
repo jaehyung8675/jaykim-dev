@@ -18,6 +18,7 @@ const inputName = document.querySelector('.form__input--name');
 const inputEmail = document.querySelector('.form__input--email');
 const inputTextarea = document.querySelector('.form__input--textarea');
 const inputBtn = document.querySelector('.form__input--btn');
+const overlay = document.querySelector('.overlay');
 
 //// Event Handler
 // Nav Bar
@@ -25,6 +26,7 @@ navBarIcon.addEventListener('click', function () {
   navBarIcon.classList.toggle('active');
   mainMenu.classList.toggle('active');
   body.classList.toggle('overflowhidden');
+  overlay.classList.toggle('hidden');
 });
 
 // Sticky navigation - Interaction Observer API
@@ -49,6 +51,8 @@ headerObserver.observe(header);
 const closeMenu = function () {
   navBarIcon.classList.remove('active');
   mainMenu.classList.remove('active');
+  body.classList.remove('overflowhidden');
+  overlay.classList.add('hidden');
 };
 
 navLinks.addEventListener('click', function (e) {
