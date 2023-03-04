@@ -4,101 +4,127 @@
   min-height: rem(660);
   background-color: var(--color-dark-navy);
   color: var(--color-text-light-tint);
-  padding: rem(120) rem(32);
+  padding: rem(60) rem(32);
 
   @include breakpoint(medium) {
-    padding: rem(120) 0;
+    padding: rem(120) rem(64);
   }
 
-  h2 {
-    text-align: center;
-    grid-column: span 12;
-    margin-bottom: rem(4);
-  }
+  .experience__container {
+    max-width: rem(760);
+    margin: 0 auto;
 
-  menu {
-    grid-column: span 12;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    overflow-x: auto;
-
-    button {
-      min-width: 33.33%;
-      font-size: rem(18);
-      font-family: $font-primary;
-      color: var(--color-accent-tint);
-      border-bottom: 4px solid var(--color-accent-tint-double);
-      padding: rem(10) rem(16);
+    h2 {
+      text-align: center;
+      margin-bottom: rem(20);
 
       @include breakpoint(medium) {
-        font-size: rem(24);
-      }
-
-      &:hover,
-      &.active {
-        color: var(--color-accent);
+        margin-bottom: rem(32);
       }
     }
 
-    hr {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 4px;
-      width: 33.33%;
-      background: var(--color-accent);
-      border: none;
-      transition: var(--transition);
-    }
+    menu {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+      margin-bottom: rem(24);
 
-    .tab-1:focus ~ hr {
-      margin-left: 0;
-    }
+      @include breakpoint(medium) {
+        margin-bottom: rem(32);
+      }
 
-    .tab-2:focus ~ hr {
-      margin-left: 33.33%;
-    }
-
-    .tab-3:focus ~ hr {
-      margin-left: 66.66%;
-    }
-  }
-
-  article {
-    display: none;
-    grid-column: span 12;
-    margin-left: rem(64);
-
-    &.active {
-      display: block;
-    }
-
-    p {
-      font-size: rem(22);
-      color: var(--color-accent);
-      margin: rem(8) 0;
-
-      span {
+      button {
+        width: 33.33%;
         font-size: rem(16);
-        margin-left: rem(20);
+        font-family: $font-primary;
+        color: var(--color-accent-tint);
+        border-bottom: 4px solid var(--color-accent-tint-double);
+        padding: rem(10);
+
+        @include breakpoint(medium) {
+          font-size: rem(24);
+          padding: rem(10) rem(16);
+        }
+
+        &:hover,
+        &.active {
+          color: var(--color-accent);
+        }
+      }
+
+      hr {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 33.33%;
+        background: var(--color-accent);
+        border: none;
+        transition: var(--transition);
+      }
+
+      .tab-1:focus ~ hr {
+        margin-left: 0;
+      }
+
+      .tab-2:focus ~ hr {
+        margin-left: 33.33%;
+      }
+
+      .tab-3:focus ~ hr {
+        margin-left: 66.66%;
       }
     }
 
-    ul {
-      li {
-        margin-left: rem(3);
-        margin-bottom: rem(6);
+    article {
+      display: none;
+      margin-left: rem(20);
+
+      &.active {
+        display: block;
       }
 
-      li::before {
-        content: '';
-        width: rem(5);
-        height: rem(5);
-        background-color: var(--color-accent);
-        margin-right: rem(5);
-        vertical-align: 10%;
-        display: inline-block;
+      p {
+        font-size: rem(18);
+        font-weight: bold;
+        color: var(--color-accent);
+        margin-bottom: rem(16);
+
+        @include breakpoint(medium) {
+          font-size: rem(26);
+        }
+
+        span {
+          display: block;
+          font-size: rem(14);
+          font-weight: normal;
+          margin-left: rem(0);
+
+          @include breakpoint(medium) {
+            display: inline;
+            font-size: rem(16);
+            margin-left: rem(20);
+          }
+        }
+      }
+
+      ul {
+        li {
+          position: relative;
+          padding-left: rem(18);
+          margin-bottom: rem(10);
+        }
+
+        li::before {
+          content: '';
+          width: rem(5);
+          height: rem(5);
+          background-color: var(--color-accent);
+          position: absolute;
+          top: 10px;
+          left: 0;
+        }
       }
     }
   }
