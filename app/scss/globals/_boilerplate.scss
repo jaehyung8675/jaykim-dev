@@ -107,7 +107,7 @@ small {
   letter-spacing: rem(1);
   padding-bottom: rem(32);
 
-  @include breakpoint(xlarge) {
+  @include breakpoint(large) {
     position: fixed;
     bottom: 110px;
     right: rem(40);

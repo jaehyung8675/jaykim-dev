@@ -4,7 +4,7 @@
   min-height: rem(660);
   background-color: var(--color-dark-navy);
   color: var(--color-text-light-tint);
-  padding: rem(60) rem(32);
+  padding: rem(54) rem(32);
 
   @include breakpoint(medium) {
     padding: rem(120) rem(64);
@@ -112,8 +112,13 @@
       ul {
         li {
           position: relative;
+          font-size: rem(14);
           padding-left: rem(18);
           margin-bottom: rem(10);
+
+          @include breakpoint(medium) {
+            font-size: rem(16);
+          }
         }
 
         li::before {

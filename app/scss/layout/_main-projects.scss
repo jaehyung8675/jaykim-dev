@@ -2,7 +2,7 @@
 
 .projects {
   background-color: var(--color-light-grey);
-  padding: rem(60) rem(40);
+  padding: rem(54) rem(32);
   margin: rem(14);
 
   @include breakpoint(medium) {
@@ -17,8 +17,7 @@
 
   h2 {
     grid-column: span 12;
-    gap: 0;
-    margin-bottom: rem(4);
+    margin-bottom: rem(12);
     text-align: center;
 
     @include breakpoint(medium) {
@@ -44,9 +43,11 @@
     img {
       width: 100%;
       background-color: var(--color-accent);
+      pointer-events: none;
     }
 
     figcaption {
+      pointer-events: none;
       padding: rem(14) rem(24) rem(22);
 
       h3 {

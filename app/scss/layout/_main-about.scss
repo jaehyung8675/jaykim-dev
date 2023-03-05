@@ -2,7 +2,7 @@
 
 .about {
   background-color: var(--color-light-grey);
-  padding: rem(60) rem(40);
+  padding: rem(40);
   margin: rem(14);
 
   @include breakpoint(medium) {
@@ -31,7 +31,7 @@
     }
 
     div:first-child {
-      margin-bottom: rem(50);
+      margin-bottom: rem(36);
 
       @include breakpoint(medium) {
         margin-bottom: rem(72);
@@ -47,9 +47,11 @@
     }
 
     p {
+      font-size: rem(14);
       margin-bottom: rem(20);
 
       @include breakpoint(medium) {
+        font-size: rem(16);
         margin-bottom: rem(32);
       }
     }
@@ -67,7 +69,11 @@
         // margin-right: rem(12);
 
         svg {
-          width: rem(36);
+          width: rem(32);
+
+          @include breakpoint(medium) {
+            width: rem(36);
+          }
         }
       }
     }

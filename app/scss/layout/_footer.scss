@@ -3,14 +3,35 @@
 footer {
   background-color: var(--color-dark-navy);
   color: var(--color-text-light-primary);
-  padding: rem(100);
+  padding: rem(60) rem(46);
+
+  @include breakpoint(medium) {
+    padding: rem(64);
+  }
+
+  @include breakpoint(large) {
+    padding: rem(100);
+  }
 
   article {
-    grid-column: span 5;
+    grid-column: span 12;
+    padding-right: 0;
+    margin-bottom: rem(32);
+
+    @include breakpoint(medium) {
+      grid-column: span 6;
+      padding-right: rem(30);
+    }
 
     p {
+      font-size: rem(14);
       margin-top: rem(10);
-      margin-bottom: rem(28);
+      margin-bottom: rem(22);
+
+      @include breakpoint(medium) {
+        font-size: rem(16);
+        margin-bottom: rem(28);
+      }
     }
 
     ul {
@@ -36,9 +57,13 @@ footer {
   }
 
   form {
-    grid-column: 7 / span 6;
+    grid-column: span 12;
     display: flex;
     flex-direction: column;
+
+    @include breakpoint(medium) {
+      grid-column: span 6;
+    }
 
     label {
       color: var(--color-accent);
@@ -48,22 +73,30 @@ footer {
     input,
     textarea {
       color: var(--color-accent);
-      font-size: rem(18);
+      font-size: rem(14);
       font-family: $font-secondary;
       border-bottom: 1px solid var(--color-accent);
       padding: rem(6) 0 rem(14);
       margin-bottom: rem(24);
+
+      @include breakpoint(medium) {
+        font-size: rem(18);
+      }
     }
 
     button {
       max-width: rem(120);
-      font-size: rem(16);
+      font-size: rem(14);
       color: var(--color-accent);
       background-color: transparent;
       border: 1px solid var(--color-accent);
       border-radius: rem(4);
       padding: rem(12) rem(18);
       margin-top: rem(6);
+
+      @include breakpoint(medium) {
+        font-size: rem(16);
+      }
 
       &:hover {
         background-color: var(--color-accent-tint-double);

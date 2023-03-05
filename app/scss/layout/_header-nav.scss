@@ -1,0 +1,206 @@
+@use '../util' as *;
+
+header {
+  background-color: var(--color-dark-navy);
+  color: var(--color-text-light-primary);
+  padding-top: rem(120);
+  padding-bottom: rem(76);
+
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &.sticky {
+      position: fixed !important;
+      backdrop-filter: blur(20px);
+      z-index: 9;
+
+      @include breakpoint(large) {
+        height: rem(80);
+        background-color: var(--color-dark-navy);
+        box-shadow: 0px 0px 20px var(--color-dark-navy);
+      }
+
+      & > .nav__container {
+        height: rem(80);
+        margin-top: 0;
+      }
+    }
+
+    .nav__container {
+      max-width: rem(1200);
+      height: rem(80);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-inline: auto;
+      padding: 0 rem(32);
+      margin-top: rem(20);
+
+      .logo {
+        fill: var(--color-accent);
+        z-index: 10;
+        width: rem(44);
+        height: rem(44);
+
+        @include breakpoint(medium) {
+          width: rem(52.8);
+          height: rem(52.8);
+        }
+      }
+
+      .main-menu {
+        visibility: hidden;
+        display: none;
+        transform: translateX(100vw);
+        transition: var(--transition);
+
+        @include breakpoint(large) {
+          display: flex;
+          align-items: center;
+          visibility: visible;
+          transform: translateX(0vw);
+        }
+
+        &.active {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: min(72vw, 400px);
+          height: 100vh;
+          background-color: var(--color-dark-navy);
+          visibility: visible;
+          transform: translateX(0vw);
+          transition: var(--transition);
+          z-index: 9;
+        }
+
+        .nav__links {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          @include breakpoint(large) {
+            flex-direction: row;
+          }
+
+          li {
+            font-size: rem(24);
+            font-family: $font-secondary;
+            padding: rem(16);
+
+            @include breakpoint(large) {
+              font-size: rem(16);
+            }
+
+            a:hover {
+              color: var(--color-accent-tint);
+            }
+
+            span {
+              font-size: rem(14);
+              color: var(--color-accent);
+            }
+          }
+        }
+
+        .btn--resume > a {
+          font-size: rem(20);
+          color: var(--color-accent);
+          background-color: transparent;
+          border: 1px solid var(--color-accent);
+          border-radius: 4px;
+          width: max-content;
+          padding: rem(16) rem(44);
+          margin: rem(42) 0 0;
+
+          @include breakpoint(large) {
+            font-size: rem(16);
+            padding: rem(12) rem(18);
+            margin: 0 0 0 rem(16);
+          }
+
+          &:hover {
+            background-color: var(--color-accent-tint-double);
+          }
+        }
+      }
+
+      .navbar-icon {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        z-index: 10;
+
+        @include breakpoint(large) {
+          display: none;
+        }
+
+        span {
+          display: flex;
+          position: relative;
+          width: 40px;
+          height: 3px;
+          background-color: var(--color-accent);
+          transition: var(--transition);
+
+          @include breakpoint(medium) {
+            width: 45px;
+          }
+
+          &:before {
+            content: '';
+            width: 40px;
+            height: 3px;
+            position: absolute;
+            top: 12px;
+            background-color: var(--color-accent);
+            transition: var(--transition);
+
+            @include breakpoint(medium) {
+              width: 45px;
+              top: 13px;
+            }
+          }
+
+          &:after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            position: absolute;
+            bottom: 12px;
+            background-color: var(--color-accent);
+            transition: var(--transition);
+
+            @include breakpoint(medium) {
+              width: 45px;
+              bottom: 13px;
+            }
+          }
+        }
+
+        &.active {
+          span {
+            background-color: transparent;
+
+            &:before {
+              transform: rotate(45deg);
+              top: 0;
+            }
+
+            &:after {
+              transform: rotate(-45deg);
+              bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

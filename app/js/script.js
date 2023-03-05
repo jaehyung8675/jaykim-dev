@@ -1,35 +1,30 @@
 'use strict';
-
+//////////////////////////////////////////
 //// Elements
-const body = document.querySelector('body');
+//////////////////////////////////////////
+
 const header = document.querySelector('.header');
 const nav = document.querySelector('nav');
-const logo = document.querySelector('.logo');
-const mainMenu = document.querySelector('.main-menu');
+
 const navBarIcon = document.querySelector('.navbar-icon');
-const navLinks = document.querySelector('.nav__links');
-const about = document.getElementById('about');
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const experienceMenu = document.querySelector('.experience__menu');
-const experienceTabs = document.querySelectorAll('.btn--experience');
-const experienceContents = document.querySelectorAll('.article--experience');
-const projects = document.querySelector('.projects');
-const inputName = document.querySelector('.form__input--name');
-const inputEmail = document.querySelector('.form__input--email');
-const inputTextarea = document.querySelector('.form__input--textarea');
-const inputBtn = document.querySelector('.form__input--btn');
+const mainMenu = document.querySelector('.main-menu');
+const body = document.querySelector('body');
 const overlay = document.querySelector('.overlay');
 
-//// Event Handler
-// Nav Bar
-navBarIcon.addEventListener('click', function () {
-  navBarIcon.classList.toggle('active');
-  mainMenu.classList.toggle('active');
-  body.classList.toggle('overflowhidden');
-  overlay.classList.toggle('hidden');
-});
+const navLinks = document.querySelector('.nav__links');
+const scrollToTop = document.querySelector('.logo');
+const btnScrollToAbout = document.querySelector('.btn--scroll-to');
+const scrollToAbout = document.getElementById('about');
 
-// Sticky navigation - Interaction Observer API
+const experienceMenu = document.querySelector('.experience__menu');
+
+const projects = document.querySelector('.projects');
+
+//////////////////////////////////////////
+//// Event Handler
+//////////////////////////////////////////
+
+// Sticky navigation
 const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
@@ -47,7 +42,15 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 headerObserver.observe(header);
 
-// Section navigation
+// Toggling navigation
+navBarIcon.addEventListener('click', function () {
+  navBarIcon.classList.toggle('active');
+  mainMenu.classList.toggle('active');
+  body.classList.toggle('overflowhidden');
+  overlay.classList.toggle('hidden');
+});
+
+// Closing navigation
 const closeMenu = function () {
   navBarIcon.classList.remove('active');
   mainMenu.classList.remove('active');
@@ -55,35 +58,56 @@ const closeMenu = function () {
   overlay.classList.add('hidden');
 };
 
-navLinks.addEventListener('click', function (e) {
-  e.preventDefault();
-  if (e.target.classList.contains('nav__link')) {
-    const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  }
-  closeMenu();
-});
-
-logo.addEventListener('click', function (e) {
+// Scrolling to Top
+scrollToTop.addEventListener('click', function (e) {
   e.preventDefault();
   header.scrollIntoView({ behavior: 'smooth' });
   closeMenu();
 });
 
-// Button scrolling
-btnScrollTo.addEventListener('click', function () {
-  about.scrollIntoView({
+// Button scrolling to about section
+btnScrollToAbout.addEventListener('click', function (e) {
+  const sectionAbout = scrollToAbout.getBoundingClientRect();
+
+  window.scrollTo({
+    left: sectionAbout.left + window.pageXOffset,
+    top: sectionAbout.top - navHeight + window.pageYOffset,
     behavior: 'smooth',
   });
+});
+
+// Scroll to each section
+navLinks.addEventListener('click', function (e) {
+  e.preventDefault();
+  // if (e.target.classList.contains('nav__link')) {
+  //   const id = e.target.getAttribute('href');
+  //   document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  // }
+
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    const section = document.querySelector(id).getBoundingClientRect();
+
+    window.scrollTo({
+      left: section.left + window.pageXOffset,
+      top: section.top - navHeight + window.pageYOffset,
+      behavior: 'smooth',
+    });
+  }
   closeMenu();
 });
 
 // Experience tap & content activation
 experienceMenu.addEventListener('click', function (e) {
+  const experienceTaps = document.querySelectorAll('.btn--experience');
   const clickedTap = e.target.closest('button');
+  const experienceContents = document.querySelectorAll('.article--experience');
+
+  console.log(clickedTap);
+
   if (!clickedTap) return;
   // Activate top
-  experienceTabs.forEach((tab) => tab.classList.remove('active'));
+  experienceTaps.forEach((tab) => tab.classList.remove('active'));
   clickedTap.classList.add('active');
   // Activate content
   experienceContents.forEach((content) => content.classList.remove('active'));
@@ -94,27 +118,15 @@ experienceMenu.addEventListener('click', function (e) {
 
 // Project fase animation
 const handleHover = function (e) {
-  const link = e.target.closest('.project');
-  const siblings = link.closest('.projects').querySelectorAll('figure');
+  if (e.target.classList.contains('project__link')) {
+    const link = e.target.closest('.project');
+    const siblings = link.closest('.projects').querySelectorAll('.project');
 
-  siblings.forEach((el) => {
-    if (el !== link) el.style.opacity = this;
-  });
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = this;
+    });
+  }
 };
 
 projects.addEventListener('mouseover', handleHover.bind(0.3));
 projects.addEventListener('mouseout', handleHover.bind(1));
-
-// Contact form submit
-// Nedd to find how to clean input value after submiting
-
-// const form = document.querySelector('.form');
-// inputBtn.addEventListener('click', function (e) {
-//   // e.preventDefault();
-//   // inputName.value = inputEmail.value = inputTextarea.value = '';
-//   form.reset();
-// });
-
-// function submitReset() {
-//   inputName.value = inputEmail.value = inputTextarea.value = '';
-// }
