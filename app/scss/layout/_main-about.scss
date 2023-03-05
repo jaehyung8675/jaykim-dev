@@ -31,7 +31,7 @@
     }
 
     div:first-child {
-      margin-bottom: rem(36);
+      margin-bottom: rem(48);
 
       @include breakpoint(medium) {
         margin-bottom: rem(72);
@@ -53,6 +53,12 @@
       @include breakpoint(medium) {
         font-size: rem(16);
         margin-bottom: rem(32);
+      }
+
+      span {
+        color: var(--color-accent);
+        font-weight: bold;
+        border-bottom: 2px solid var(--color-accent);
       }
     }
 

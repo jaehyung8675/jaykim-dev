@@ -64,15 +64,15 @@
         transition: var(--transition);
       }
 
-      .tab-1:focus ~ hr {
+      .bar-1 {
         margin-left: 0;
       }
 
-      .tab-2:focus ~ hr {
+      .bar-2 {
         margin-left: 33.33%;
       }
 
-      .tab-3:focus ~ hr {
+      .bar-3 {
         margin-left: 66.66%;
       }
     }
