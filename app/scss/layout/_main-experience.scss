@@ -1,7 +1,6 @@
 @use '../util' as *;
 
 .experience {
-  min-height: rem(660);
   background-color: var(--color-dark-navy);
   color: var(--color-text-light-tint);
   padding: rem(54) rem(32);
@@ -79,6 +78,7 @@
 
     article {
       display: none;
+      min-height: rem(260);
       margin-left: rem(20);
 
       &.active {
