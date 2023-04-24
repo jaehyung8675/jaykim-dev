@@ -34,7 +34,7 @@
       }
 
       button {
-        width: 33.33%;
+        width: 25%;
         font-size: rem(16);
         font-family: $font-primary;
         color: var(--color-accent-tint);
@@ -57,22 +57,10 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        width: 33.33%;
+        width: 25%;
         background: var(--color-accent);
         border: none;
         transition: var(--transition);
-      }
-
-      .bar-1 {
-        margin-left: 0;
-      }
-
-      .bar-2 {
-        margin-left: 33.33%;
-      }
-
-      .bar-3 {
-        margin-left: 66.66%;
       }
     }
 

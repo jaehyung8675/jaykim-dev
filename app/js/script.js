@@ -109,7 +109,7 @@ experienceMenu.addEventListener('click', function (e) {
   experienceTaps.forEach((tab) => tab.classList.remove('active'));
   clickedTap.classList.add('active');
 
-  tabBar.style.marginLeft = `${(clickedTap.dataset.tab - 1) * 33.33}%`;
+  tabBar.style.marginLeft = `${(clickedTap.dataset.tab - 1) * 25}%`;
 
   // Activate content
   experienceContents.forEach((content) => content.classList.remove('active'));
