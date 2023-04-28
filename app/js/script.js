@@ -14,7 +14,7 @@ const overlay = document.querySelector('.overlay');
 const navLinks = document.querySelector('.nav__links');
 const scrollToTop = document.querySelector('.logo');
 const btnScrollToAbout = document.querySelector('.btn--scroll-to');
-const scrollToAbout = document.getElementById('about');
+const scrollToAbout = document.getElementById('projects');
 
 const experienceMenu = document.querySelector('.experience__menu');
 

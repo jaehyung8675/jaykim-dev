@@ -44,15 +44,39 @@ hgroup {
       max-width: 100%;
       font-size: clamp(1rem, 0.6364rem + 0.9091vw, 1.25rem);
       line-height: 1.7;
+      margin-bottom: rem(22);
 
       @include breakpoint(medium) {
         max-width: 90%;
+        margin-bottom: rem(32);
       }
 
       span {
         color: var(--color-accent);
         font-weight: bold;
-        // border-bottom: 2px solid var(--color-accent);
+      }
+    }
+
+    button {
+      color: var(--color-accent);
+      font-size: clamp(1rem, 0.6364rem + 0.9091vw, 1.25rem);
+      font-weight: bold;
+      text-transform: uppercase;
+
+      background: linear-gradient(
+        to right,
+        var(--color-accent) 50%,
+        var(--color-dark-navy) 50%
+      );
+      background-position: 100%;
+      background-size: 220% 100%;
+      transition: var(--transition);
+      padding: rem(8) rem(12);
+      margin-left: rem(-12);
+
+      &:hover {
+        color: var(--color-dark-navy);
+        background-position: 0 100%;
       }
     }
   }
@@ -60,7 +84,6 @@ hgroup {
   figure {
     position: relative;
     display: inline-block;
-    // width: 100%;
     width: 72%;
     margin: 0 auto;
 
