@@ -67,7 +67,11 @@
     article {
       display: none;
       min-height: rem(260);
-      margin-left: rem(20);
+      margin: 0 rem(18);
+
+      @include breakpoint(medium) {
+        margin: 0 rem(52);
+      }
 
       &.active {
         display: block;
