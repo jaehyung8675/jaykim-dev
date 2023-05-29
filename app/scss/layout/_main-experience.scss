@@ -3,7 +3,7 @@
 .experience {
   background-color: var(--color-dark-navy);
   color: var(--color-text-light-tint);
-  padding: rem(54) rem(32);
+  padding: rem(54) 0;
 
   @include breakpoint(medium) {
     padding: rem(120) rem(64);
@@ -12,6 +12,7 @@
   h2 {
     text-align: center;
     margin-bottom: rem(20);
+    padding: 0 rem(32);
 
     @include breakpoint(medium) {
       margin-bottom: rem(32);
@@ -32,10 +33,14 @@
       position: relative;
       display: flex;
       flex-direction: row;
+      overflow-x: auto;
       margin-bottom: rem(18);
+      padding-left: rem(32);
 
       @include breakpoint(medium) {
         flex-direction: column;
+        overflow-x: initial;
+        padding-left: 0;
       }
 
       button {
@@ -73,12 +78,14 @@
         border: none;
         transform: translateX(0);
         transition: var(--transition);
+        margin-left: rem(32);
 
         @include breakpoint(medium) {
           top: 0;
           width: 4px;
           height: 51px;
           transform: translateY(0);
+          margin-left: 0;
         }
       }
     }
@@ -87,6 +94,7 @@
       display: none;
       min-height: rem(350);
       margin-left: rem(18);
+      padding: 0 rem(32);
 
       @include breakpoint(medium) {
         margin-left: rem(30);
