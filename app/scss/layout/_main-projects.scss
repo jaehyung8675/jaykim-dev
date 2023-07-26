@@ -17,25 +17,46 @@
 
   .project__header {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
+    flex-flow: column;
+    align-items: center;
     grid-column: span 12;
-    margin-bottom: rem(12);
+    margin-bottom: rem(6);
+
+    @include breakpoint(medium) {
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: rem(12);
+    }
+
+    h2 {
+      margin-bottom: rem(12);
+    }
 
     menu {
       position: relative;
       display: flex;
+      align-items: center;
+
+      @include breakpoint(medium) {
+      }
 
       button {
-        min-width: rem(100);
+        min-width: rem(80);
         font-family: $font-primary;
         font-weight: bold;
-        font-size: rem(24);
+        font-size: rem(18);
         color: var(--color-accent-tint);
         text-align: center;
         padding-bottom: rem(8);
-        margin-left: rem(10);
+        margin: rem(5);
         cursor: pointer;
+
+        @include breakpoint(medium) {
+          min-width: rem(100);
+          font-size: rem(24);
+          // margin-left: rem(10);
+        }
 
         &:hover,
         &.active {
@@ -47,20 +68,18 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        height: 2px;
-        width: 150px;
+        height: 3px;
+        width: 80px;
         background: var(--color-accent);
         border: none;
         transform: translateX(0);
         transition: var(--transition);
-        margin-left: rem(32);
+        margin: rem(5);
 
         @include breakpoint(medium) {
-          bottom: 0;
           width: 100px;
           height: 4px;
-          transform: translateX(0);
-          margin-left: rem(10);
+          // margin-left: rem(10);
         }
       }
     }
@@ -73,12 +92,20 @@
     &.active {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: rem(20);
+      gap: rem(14);
       margin-inline: auto;
+
+      @include breakpoint(medium) {
+        gap: rem(16);
+      }
+
+      @include breakpoint(large) {
+        gap: rem(20);
+      }
     }
 
     figure {
-      grid-column: span 4;
+      grid-column: span 12;
       background-color: var(--color-white);
       margin-bottom: 0;
       transition: var(--transition);

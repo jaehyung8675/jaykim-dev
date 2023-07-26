@@ -145,8 +145,8 @@ projectMenu.addEventListener('click', function (e) {
       (clickedTap.dataset.tab - 1) * 110
     }px)`;
   } else {
-    categoryBar.style.transform = `translateY(${
-      (clickedTap.dataset.tab - 1) * 51
+    categoryBar.style.transform = `translateX(${
+      (clickedTap.dataset.tab - 1) * 90
     }px)`;
   }
 
