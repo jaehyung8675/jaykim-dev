@@ -18,6 +18,8 @@ const scrollToAbout = document.getElementById('projects');
 
 const experienceMenu = document.querySelector('.experience__menu');
 
+const projectMenu = document.querySelector('.project__menu');
+
 const projects = document.querySelector('.projects');
 
 //////////////////////////////////////////
@@ -123,6 +125,35 @@ experienceMenu.addEventListener('click', function (e) {
   experienceContents.forEach((content) => content.classList.remove('active'));
   document
     .querySelector(`.ex-${clickedTap.dataset.tab}`)
+    .classList.add('active');
+});
+
+// Projects tap & content activation
+projectMenu.addEventListener('click', function (e) {
+  const projectTaps = document.querySelectorAll('.project__tab');
+  const clickedTap = e.target.closest('button');
+  const projectContents = document.querySelectorAll('.project__content');
+  const categoryBar = document.querySelector('.category__bar');
+
+  if (!clickedTap) return;
+  // Activate top
+  projectTaps.forEach((tab) => tab.classList.remove('active'));
+  clickedTap.classList.add('active');
+
+  if (window.screen.width >= 640) {
+    categoryBar.style.transform = `translateX(${
+      (clickedTap.dataset.tab - 1) * 110
+    }px)`;
+  } else {
+    categoryBar.style.transform = `translateY(${
+      (clickedTap.dataset.tab - 1) * 51
+    }px)`;
+  }
+
+  // Activate content
+  projectContents.forEach((content) => content.classList.remove('active'));
+  document
+    .querySelector(`.project-${clickedTap.dataset.tab}`)
     .classList.add('active');
 });
 

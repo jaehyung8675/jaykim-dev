@@ -15,68 +15,121 @@
     margin: rem(24);
   }
 
-  h2 {
+  .project__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
     grid-column: span 12;
     margin-bottom: rem(12);
-    text-align: center;
 
-    @include breakpoint(medium) {
-      text-align: left;
-    }
-  }
+    menu {
+      position: relative;
+      display: flex;
 
-  figure {
-    grid-column: span 12;
-    background-color: var(--color-white);
-    margin-bottom: 0;
-    transition: var(--transition);
-
-    @include breakpoint(medium) {
-      grid-column: span 6;
-      margin-bottom: rem(16);
-    }
-
-    @include breakpoint(large) {
-      grid-column: span 4;
-    }
-
-    img {
-      width: 100%;
-      background-color: var(--color-accent);
-      pointer-events: none;
-    }
-
-    figcaption {
-      pointer-events: none;
-      padding: rem(14) rem(24) rem(22);
-
-      h3 {
+      button {
+        min-width: rem(100);
         font-family: $font-primary;
-        font-size: rem(16);
+        font-weight: bold;
+        font-size: rem(24);
+        color: var(--color-accent-tint);
+        text-align: center;
+        padding-bottom: rem(8);
+        margin-left: rem(10);
+        cursor: pointer;
 
-        margin-bottom: rem(7);
-
-        @include breakpoint(medium) {
-          font-size: rem(16);
-        }
-
-        @include breakpoint(large) {
-          font-size: rem(20);
+        &:hover,
+        &.active {
+          color: var(--color-accent);
         }
       }
 
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: rem(4);
+      hr {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 150px;
+        background: var(--color-accent);
+        border: none;
+        transform: translateX(0);
+        transition: var(--transition);
+        margin-left: rem(32);
 
-        li {
-          font-size: rem(10);
-          font-weight: bold;
-          text-transform: uppercase;
-          color: var(--color-white);
-          background-color: var(--color-accent);
-          padding: rem(4) rem(10);
+        @include breakpoint(medium) {
+          bottom: 0;
+          width: 100px;
+          height: 4px;
+          transform: translateX(0);
+          margin-left: rem(10);
+        }
+      }
+    }
+  }
+
+  .project__content {
+    display: none;
+    grid-column: span 12;
+
+    &.active {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: rem(20);
+      margin-inline: auto;
+    }
+
+    figure {
+      grid-column: span 4;
+      background-color: var(--color-white);
+      margin-bottom: 0;
+      transition: var(--transition);
+
+      @include breakpoint(medium) {
+        grid-column: span 6;
+        margin-bottom: rem(16);
+      }
+
+      @include breakpoint(large) {
+        grid-column: span 4;
+      }
+
+      img {
+        width: 100%;
+        background-color: var(--color-accent);
+        pointer-events: none;
+      }
+
+      figcaption {
+        pointer-events: none;
+        padding: rem(14) rem(24) rem(22);
+
+        h3 {
+          font-family: $font-primary;
+          font-size: rem(16);
+
+          margin-bottom: rem(7);
+
+          @include breakpoint(medium) {
+            font-size: rem(16);
+          }
+
+          @include breakpoint(large) {
+            font-size: rem(20);
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          gap: rem(4);
+
+          li {
+            font-size: rem(10);
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--color-white);
+            background-color: var(--color-accent);
+            padding: rem(4) rem(10);
+          }
         }
       }
     }
