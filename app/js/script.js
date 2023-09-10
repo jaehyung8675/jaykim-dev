@@ -142,7 +142,7 @@ projectMenu.addEventListener('click', function (e) {
 
   if (window.screen.width >= 640) {
     categoryBar.style.transform = `translateX(${
-      (clickedTap.dataset.tab - 1) * 112
+      (clickedTap.dataset.tab - 1) * 118
     }px)`;
   } else {
     categoryBar.style.transform = `translateX(${

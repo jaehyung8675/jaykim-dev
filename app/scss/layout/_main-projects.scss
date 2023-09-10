@@ -30,9 +30,11 @@
 
     h2 {
       margin-bottom: rem(12);
+      text-align: center;
 
       @include breakpoint(medium) {
         margin-bottom: rem(0);
+        text-align: left;
       }
     }
 
@@ -53,7 +55,7 @@
         cursor: pointer;
 
         @include breakpoint(medium) {
-          min-width: rem(100);
+          min-width: rem(106);
           font-size: rem(24);
         }
 
@@ -73,10 +75,10 @@
         border: none;
         transform: translateX(0);
         transition: var(--transition);
-        margin: rem(5);
+        margin: rem(6);
 
         @include breakpoint(medium) {
-          width: 100px;
+          width: 106px;
           height: 4px;
         }
       }
