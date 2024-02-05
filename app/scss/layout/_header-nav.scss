@@ -12,13 +12,14 @@ header {
     left: 0;
     transform: none;
     max-width: rem(1200);
-    border-radius: rem(4);
+    // border-radius: rem(20);
 
     @include breakpoint(large) {
       width: auto;
       top: 1%;
       left: 50%;
       transform: translate(-50%, -1%);
+      border-radius: rem(4);
     }
 
     &.sticky {
@@ -38,12 +39,16 @@ header {
 
     .nav__container {
       max-width: rem(1200);
-      height: rem(80);
+      height: rem(60);
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-inline: auto;
       padding: 0 rem(32);
+
+      @include breakpoint(medium) {
+        height: rem(80);
+      }
 
       .logo {
         fill: var(--color-accent);
