@@ -13,8 +13,6 @@ const overlay = document.querySelector('.overlay');
 
 const navLinks = document.querySelector('.nav__links');
 const scrollToTop = document.querySelector('.logo');
-const btnScrollToAbout = document.querySelector('.btn--scroll-to');
-const scrollToAbout = document.getElementById('projects');
 
 const experienceMenu = document.querySelector('.experience__menu');
 
@@ -65,17 +63,6 @@ scrollToTop.addEventListener('click', function (e) {
   e.preventDefault();
   header.scrollIntoView({ behavior: 'smooth' });
   closeMenu();
-});
-
-// Button scrolling to about section
-btnScrollToAbout.addEventListener('click', function (e) {
-  const sectionAbout = scrollToAbout.getBoundingClientRect();
-
-  window.scrollTo({
-    left: sectionAbout.left + window.pageXOffset,
-    top: sectionAbout.top - navHeight + window.pageYOffset,
-    behavior: 'smooth',
-  });
 });
 
 // Scroll to each section
