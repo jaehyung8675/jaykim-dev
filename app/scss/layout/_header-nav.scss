@@ -3,14 +3,25 @@
 header {
   background-color: var(--color-dark-navy);
   color: var(--color-text-light-primary);
-  padding-top: rem(120);
-  padding-bottom: rem(76);
+  padding: rem(70) 0;
+  // padding-top: rem(120);
+  // padding-bottom: rem(76);
 
   nav {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    transform: none;
+    max-width: rem(1200);
+    border-radius: rem(4);
+
+    @include breakpoint(large) {
+      width: auto;
+      top: 1%;
+      left: 50%;
+      transform: translate(-50%, -1%);
+    }
 
     &.sticky {
       position: fixed !important;
@@ -19,8 +30,6 @@ header {
 
       @include breakpoint(large) {
         height: rem(80);
-        background-color: var(--color-dark-navy);
-        box-shadow: 0px 0px 20px var(--color-dark-navy);
       }
 
       & > .nav__container {
@@ -37,17 +46,17 @@ header {
       align-items: center;
       margin-inline: auto;
       padding: 0 rem(32);
-      margin-top: rem(20);
 
       .logo {
         fill: var(--color-accent);
         z-index: 10;
-        width: rem(44);
-        height: rem(44);
+        width: rem(38);
+        height: rem(38);
 
         @include breakpoint(medium) {
-          width: rem(52.8);
-          height: rem(52.8);
+          width: rem(42);
+          height: rem(42);
+          margin-right: rem(16);
         }
       }
 
@@ -99,13 +108,13 @@ header {
               font-size: rem(16);
             }
 
-            a:hover {
-              color: var(--color-accent-tint);
+            a {
+              color: var(--color-accent);
+              font-weight: 500;
             }
 
-            span {
-              font-size: rem(14);
-              color: var(--color-accent);
+            a:hover {
+              color: var(--color-accent-tint);
             }
           }
         }
@@ -115,9 +124,9 @@ header {
           color: var(--color-accent);
           background-color: transparent;
           border: 1px solid var(--color-accent);
-          border-radius: 4px;
+          border-radius: rem(4);
           width: max-content;
-          padding: rem(16) rem(44);
+          padding: rem(16) rem(32);
           margin: rem(42) 0 0;
 
           @include breakpoint(large) {
@@ -145,42 +154,42 @@ header {
         span {
           display: flex;
           position: relative;
-          width: 40px;
+          width: 30px;
           height: 3px;
           background-color: var(--color-accent);
           transition: var(--transition);
 
           @include breakpoint(medium) {
-            width: 45px;
+            width: 35px;
           }
 
           &:before {
             content: '';
-            width: 40px;
+            width: 30px;
             height: 3px;
             position: absolute;
-            top: 12px;
+            top: 10px;
             background-color: var(--color-accent);
             transition: var(--transition);
 
             @include breakpoint(medium) {
-              width: 45px;
-              top: 13px;
+              width: 35px;
+              top: 12px;
             }
           }
 
           &:after {
             content: '';
-            width: 40px;
+            width: 30px;
             height: 3px;
             position: absolute;
-            bottom: 12px;
+            bottom: 10px;
             background-color: var(--color-accent);
             transition: var(--transition);
 
             @include breakpoint(medium) {
-              width: 45px;
-              bottom: 13px;
+              width: 35px;
+              bottom: 12px;
             }
           }
         }

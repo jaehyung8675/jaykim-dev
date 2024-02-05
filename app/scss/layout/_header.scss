@@ -3,16 +3,16 @@ hgroup {
   display: grid;
   align-items: center;
   max-width: rem(1000);
-  padding: 0 rem(32);
+  padding: rem(0) rem(32);
   margin-inline: auto;
 
   @include breakpoint(medium) {
     grid-template-columns: 60% 1fr;
-    padding: rem(32) rem(64);
+    padding: rem(32) rem(56);
   }
 
   @include breakpoint(large) {
-    padding: rem(80) rem(32);
+    padding: rem(80) rem(32) rem(56);
   }
 
   article {
@@ -44,11 +44,11 @@ hgroup {
       max-width: 100%;
       font-size: clamp(1rem, 0.6364rem + 0.9091vw, 1.25rem);
       line-height: 1.7;
-      margin-bottom: rem(22);
+      // margin-bottom: rem(22);
 
       @include breakpoint(medium) {
         max-width: 90%;
-        margin-bottom: rem(32);
+        // margin-bottom: rem(32);
       }
 
       span {
@@ -57,32 +57,32 @@ hgroup {
       }
     }
 
-    button {
-      color: var(--color-accent);
-      font-size: clamp(1rem, 0.6364rem + 0.9091vw, 1.25rem);
-      font-weight: bold;
-      text-transform: uppercase;
+    // button {
+    //   color: var(--color-accent);
+    //   font-size: clamp(1rem, 0.6364rem + 0.9091vw, 1.25rem);
+    //   font-weight: bold;
+    //   text-transform: uppercase;
 
-      background: linear-gradient(
-        to right,
-        var(--color-accent) 50%,
-        var(--color-dark-navy) 50%
-      );
-      background-position: 100%;
-      background-size: 220% 100%;
-      transition: var(--transition);
-      padding: rem(12) rem(20);
-      margin-left: 0;
+    //   background: linear-gradient(
+    //     to right,
+    //     var(--color-accent) 50%,
+    //     var(--color-dark-navy) 50%
+    //   );
+    //   background-position: 100%;
+    //   background-size: 220% 100%;
+    //   transition: var(--transition);
+    //   padding: rem(12) rem(20);
+    //   margin-left: 0;
 
-      @include breakpoint(medium) {
-        margin-left: rem(-20);
-      }
+    //   @include breakpoint(medium) {
+    //     margin-left: rem(-20);
+    //   }
 
-      &:hover {
-        color: var(--color-dark-navy);
-        background-position: 0 100%;
-      }
-    }
+    //   &:hover {
+    //     color: var(--color-dark-navy);
+    //     background-position: 0 100%;
+    //   }
+    // }
   }
 
   figure {
