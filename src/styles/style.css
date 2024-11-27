@@ -648,7 +648,6 @@ header nav .nav__container .navbar-icon.active span:after {
 }
 .experience .experience__container article {
   display: none;
-  min-height: 21.875rem;
   margin-left: 1.125rem;
   padding: 0 2rem;
 }
