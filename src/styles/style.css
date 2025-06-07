@@ -857,7 +857,7 @@ header nav .nav__container .navbar-icon.active span:after {
   font-weight: bold;
   color: var(--color-accent);
   text-align: center;
-  border: 1.5px solid var(--color-accent);
+  border: 1.5px solid rgba(117, 133, 255, 0.45);
   border-radius: 0.1875rem;
   padding: 0.5rem 0.75rem;
 }
