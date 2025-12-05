@@ -257,13 +257,13 @@ hgroup figure .shape-rectangle {
   width: 23.75rem;
   fill: var(--color-accent);
   position: absolute;
-  bottom: -1.125rem;
-  right: -1.125rem;
+  bottom: -0.7rem;
+  right: -0.7rem;
 }
 @media (min-width: 40rem) {
   hgroup figure .shape-rectangle {
-    bottom: -5%;
-    right: -5%;
+    bottom: -3%;
+    right: -3%;
   }
 }
 header {
